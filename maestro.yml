@@ -1,9 +1,9 @@
-name: metadata-service
+name: helloword-service
 ports:
   container: 8080
 host: api.<env>.sharecare.com/api-hello-world-service
 stripPrefix: true
-spec: node
+spec: jvm
 healthcheck:
   readinessProbe:
     httpGet:
@@ -15,10 +15,6 @@ healthcheck:
     initialDelaySeconds: 10
     periodSeconds: 10
 
-initContainers:
-  - image: nexus.admin.sharecare.com/hello-world-0.1.0
-    command: ["yarn", "prisma", "migrate", "deploy"]
-  
 sidecars:
-  - image: nexus.admin.sharecare.com/hello-worl-sidecar:0.1.8.19
-    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "4051"]
+  - image: nexus.admin.sharecare.com/ftech-envoy-mesh-client:stable
+  

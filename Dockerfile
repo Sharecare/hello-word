@@ -1,4 +1,4 @@
-FROM FROM nexus.admin.sharecare.com/openjdk17
+FROM nexus.admin.sharecare.com/open-jre:latest
 
 EXPOSE 8080
 
