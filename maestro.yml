@@ -1,7 +1,7 @@
 name: helloword-service
 ports:
   container: 8080
-host: api.<env>.sharecare.com/api-hello-world-service
+host: api-<env>-sharecare.com/api-hello-world-service
 stripPrefix: true
 spec: jvm
 healthcheck:
